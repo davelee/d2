@@ -1,0 +1,9 @@
+.tmp/
+.idea/
+node_modules/
+dist/
+
+src/config/config.local.js
+
+.DS_Store
+npm-debug.log

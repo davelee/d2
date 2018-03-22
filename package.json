@@ -1,0 +1,58 @@
+{
+  "name": "davelee.io",
+  "version": "0.0.1",
+  "description": "Dave Lee homepage",
+  "main": "index.js",
+  "dependencies": {
+    "baffle": "^0.3.6",
+    "baffle-react": "^0.0.2",
+    "bluebird": "^3.5.1",
+    "browserify-fs": "^1.0.0",
+    "jquery": "^3.3.1",
+    "lodash": "^4.17.5",
+    "normalize.css": "8.0.0",
+    "pem": "^1.12.3",
+    "react": "^16.2.0",
+    "react-dom": "^16.2.0",
+    "react-lazyload": "^2.3.0",
+    "react-list": "^0.8.8",
+    "react-router-dom": "^4.2.2",
+    "tiff.js": "^1.0.0"
+  },
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-polyfill": "^6.26.0",
+    "babel-preset-es2015": "^6.24.1",
+    "babel-preset-react": "^6.24.1",
+    "babel-preset-stage-0": "^6.24.1",
+    "clean-webpack-plugin": "^0.1.19",
+    "copy-webpack-plugin": "^4.5.1",
+    "css-loader": "^0.28.11",
+    "extract-text-webpack-plugin": "^3.0.2",
+    "file-loader": "^1.1.11",
+    "node-notifier": "^5.2.1",
+    "node-sass": "^4.7.2",
+    "nodemon": "^1.17.2",
+    "sass-loader": "^6.0.7",
+    "style-loader": "^0.20.3",
+    "webpack": "^3.0.0",
+    "webpack-manifest-plugin": "^2.0.0-rc.2",
+    "whatwg-fetch": "^2.0.3"
+  },
+  "scripts": {
+    "dev": "DEPLOY_ENV=dev node scripts/dev.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davelee/d2.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/davelee/d2/issues"
+  },
+  "homepage": "https://github.com/davelee/d2#readme"
+}
