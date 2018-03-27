@@ -13,7 +13,7 @@ const envConfig = {
   prod: {
     port: 5000,
     appUrl: 'https://davelee.io:5000',
-    publicPath: 'https://dbi8pdtt914h2.cloudfront.net',
+    publicPath: 'https://dbi8pdtt914h2.cloudfront.net/',
     deploy: {
       s3Location: 's3://davelee.io-static',
       invalidationId: 'ESP6EKJ0JPBUY'
