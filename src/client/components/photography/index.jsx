@@ -38,6 +38,7 @@ class Photography extends Component {
     return (
       <div className='photography'>
         <ReactList
+          useTranslate3d={true}
           itemSizeGetter={() => Math.max(document.documentElement.clientHeight, window.innerHeight || 0)}
           length={photographyData.length}
           itemRenderer={this.renderPhoto}
