@@ -11,8 +11,9 @@ const envConfig = {
 
   /****************** PROD ******************/
   prod: {
-    appUrl: 'https://davelee.io',
-    publicPath: 'https://davelee.io/',
+    port: 5000,
+    appUrl: 'https://davelee.io:5000',
+    publicPath: 'https://davelee.io:5000',
   }
 };
 
@@ -24,12 +25,10 @@ if (process.env.IS_BROWSER || typeof window !== 'undefined') {
   throw new Error('Config should be required through webpack loader, see webpack config');
 }
 
-// Make sure it's a valid deploy env
 if (!(deployEnv in envConfig)) {
   throw new Error(`Environment from process.env.DEPLOY_ENV=${deployEnv} not found in environmental config`);
 }
 
-// Check for local overrides
 if (deployEnv === 'dev') {
   try {
     envConfig.local = _.merge(envConfig.local, require('./config.local.js'));

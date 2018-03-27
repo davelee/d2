@@ -16,8 +16,7 @@
     "react-dom": "^16.2.0",
     "react-lazyload": "^2.3.0",
     "react-list": "^0.8.8",
-    "react-router-dom": "^4.2.2",
-    "tiff.js": "^1.0.0"
+    "react-router-dom": "^4.2.2"
   },
   "devDependencies": {
     "babel-core": "^6.26.0",
