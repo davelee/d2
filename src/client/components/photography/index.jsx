@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { lazyload } from 'react-lazyload';
 import ReactList from 'react-list';
+import Photo from './photo';
 import './photography.scss';
 
 class Photography extends Component {
@@ -47,20 +47,4 @@ class Photography extends Component {
   }
 }
 
-@lazyload({
-  height: '100vh',
-  once: true,
-  offset: 400,
-})
-class Photo extends React.Component {
-  render() {
-    const { url, caption, idx } = this.props;
-    return (
-      <div className="photo-wrap">
-        <img className="photo" src={url} />
-        <span className="photo-caption">{caption}</span>
-      </div>
-    );
-  }
-}
 export default Photography;

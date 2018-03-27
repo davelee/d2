@@ -7,21 +7,34 @@
   background: lightgoldenrodyellow;
   border-radius: 4px;
   color: black;
+
+  >div {
+    width: 100%;
+  }
 }
 
 .photo {
   height: 90%;
+  width: 100%;
+  object-fit: cover;
 }
 
 .photo-caption {
-  margin: 10px;
+  margin: auto;
 }
 
 .photo-wrap {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
   height: 100vh;
-  max-height: 100vh;
+}
+
+.image {
+  opacity: 0;
+  transition: opacity 1s;
+}
+
+.image-loaded {
+  opacity: 1;
 }
