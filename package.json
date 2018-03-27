@@ -43,6 +43,7 @@
   "scripts": {
     "dev": "DEPLOY_ENV=dev node scripts/dev.js",
     "deploy": "DEPLOY_ENV=prod node scripts/deploy.js",
+    "prod": "DEPLOY_ENV=prod node src/server/app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

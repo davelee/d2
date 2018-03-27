@@ -30,10 +30,14 @@ app.get('*', mainPageController);
 const https = require('https');
 const fs = require('fs');
 
-const httpsOptions = {
-  key: fs.readFileSync(path.join(__dirname, 'dev_cert/key.pem')),
-  cert: fs.readFileSync(path.join(__dirname, 'dev_cert/cert.pem'))
-};
+const httpsOptions = isDev ?
+  {
+    key: fs.readFileSync(path.join(__dirname, 'dev_cert/key.pem')),
+    cert: fs.readFileSync(path.join(__dirname, 'dev_cert/cert.pem'))
+  } : {
+    key: fs.readFileSync('/etc/letsencrypt/live/www.davelee.io/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/www.davelee.io/fullchain.pem')
+  };
 
 https.createServer(httpsOptions, app).listen(config.port);
 
