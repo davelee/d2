@@ -1,4 +1,4 @@
-const PHOTOGRAPHY_BUCKET = 'https://s3-us-west-1.amazonaws.com/davelee-photography/';
+const PHOTOGRAPHY_BUCKET = 'https://dc4t2sxxqv4kx.cloudfront.net/';
 
 const getAllPhotos = (req, res, next) => {
   const photos = [
