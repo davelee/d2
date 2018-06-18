@@ -14,13 +14,17 @@
 }
 
 .photo {
-  height: 90%;
+  height: 100%;
   width: 100%;
   object-fit: cover;
 }
 
 .photo-caption {
   margin: auto;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  color: white;
 }
 
 .photo-wrap {
@@ -28,6 +32,7 @@
   flex-direction: column;
   align-items: center;
   height: 100vh;
+  position: relative;
 }
 
 .image {
