@@ -4,12 +4,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: lightgoldenrodyellow;
+  background: white;
   border-radius: 4px;
   color: black;
 
   >div {
-    width: 100%;
+    width: 100vh;
   }
 }
 
