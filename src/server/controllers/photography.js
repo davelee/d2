@@ -3,6 +3,98 @@ const PHOTOGRAPHY_BUCKET = 'https://dc4t2sxxqv4kx.cloudfront.net/';
 const getAllPhotos = (req, res, next) => {
   const photos = [
     {
+      'caption': 'Paris, 2018',
+      'url': 'img178.png',
+    },
+    {
+      'caption': 'Paris, 2018',
+      'url': 'img179.png',
+    },
+    {
+      'caption': 'Paris, 2018.',
+      'url': 'img180.png',
+    },
+    {
+      'caption': 'Paris, 2018',
+      'url': 'img197.png',
+    },
+    {
+      'caption': 'Place des Vosges, Paris, 2018.',
+      'url': 'img199.png',
+    },
+    {
+      'caption': 'Paris, 2018.',
+      'url': 'img200.png',
+    },
+    {
+      'caption': 'Paris, 2018.',
+      'url': 'img202.png',
+    },
+    {
+      'caption': 'Paris, 2018.',
+      'url': 'img203.png',
+    },
+    {
+      'caption': 'Pizza Popolare, Paris, 2018.',
+      'url': 'img206.png',
+    },
+    {
+      'caption': 'Pizza Popolare, Paris, 2018.',
+      'url': 'img207.png',
+    },
+    {
+      'caption': 'Pizza Popolare, Paris, 2018.',
+      'url': 'img208.png',
+    },
+    {
+      'caption': 'National Archives, in The Marais, Paris, 2018',
+      'url': 'img216.png',
+    },
+    {
+      'caption': 'Paris, 2018.',
+      'url': 'img217.png',
+    },
+    {
+      'caption': 'Paris, 2018.',
+      'url': 'img218.png',
+    },
+    {
+      'caption': 'Chateau de Fontainebleau. 2018',
+      'url': 'img219.png',
+    },
+    {
+      'caption': 'Chateau de Fontainebleau, 2018.',
+      'url': 'img224.png',
+    },
+    {
+      'caption': 'Chateau de Fontainebleau, 2018',
+      'url': 'img228.png',
+    },
+    {
+      'caption': 'Chateau de Fontainebleau, 2018.',
+      'url': 'img229.png',
+    },
+    {
+      'caption': 'Fontainebleau, 2018.',
+      'url': 'img230.png',
+    },
+    {
+      'caption': 'Fontainebleau, 2018',
+      'url': 'img223.png',
+    },
+    {
+      'caption': 'The Marais, Paris, 2018',
+      'url': 'img231.png',
+    },
+    {
+      'caption': 'The Marais, Paris, 2018',
+      'url': 'img232.png',
+    },
+    {
+      'caption': 'Fontainebleau, 2018',
+      'url': 'img233.png',
+    },
+    {
       'caption': 'Bay Area.',
       'url': 'cimg22.png',
     },
