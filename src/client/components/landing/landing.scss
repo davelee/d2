@@ -10,21 +10,21 @@
   position: absolute;
 }
 
-.me-image{
-  animation: shrinkLong linear 100s forwards;
-  animation-iteration-count: 1;
+.me-image {
+  animation: shrinkLong linear 100s alternate;
+  animation-iteration-count: infinite;
   transform-origin: 50% 50%;
-  -webkit-animation: shrinkLong linear 100s forwards;
-  -webkit-animation-iteration-count: 1;
+  -webkit-animation: shrinkLong linear 100s alternate;
+  -webkit-animation-iteration-count: infinite;
   -webkit-transform-origin: 50% 50%;
-  -moz-animation: shrinkLong linear 100s forwards;
-  -moz-animation-iteration-count: 1;
+  -moz-animation: shrinkLong linear 100s alternate;
+  -moz-animation-iteration-count: infinite;
   -moz-transform-origin: 50% 50%;
-  -o-animation: shrinkLong linear 100s forwards;
-  -o-animation-iteration-count: 1;
+  -o-animation: shrinkLong linear 100s alternate;
+  -o-animation-iteration-count: infinite;
   -o-transform-origin: 50% 50%;
-  -ms-animation: shrinkLong linear 100s forwards;
-  -ms-animation-iteration-count: 1;
+  -ms-animation: shrinkLong linear 100s alternate;
+  -ms-animation-iteration-count: infinite;
   -ms-transform-origin: 50% 50%;
 }
 

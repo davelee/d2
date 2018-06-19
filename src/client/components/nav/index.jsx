@@ -29,6 +29,18 @@ class Nav extends Component {
         onMouseLeave: this.onMouseLeave.bind(this, '/about'),
       },
       {
+        to: '/feed',
+        title: 'feed',
+        onMouseEnter: this.onMouseEnter.bind(this, '/feed'),
+        onMouseLeave: this.onMouseLeave.bind(this, '/feed'),
+      },
+      {
+        to: '/projects',
+        title: 'projects',
+        onMouseEnter: this.onMouseEnter.bind(this, '/projects'),
+        onMouseLeave: this.onMouseLeave.bind(this, '/projects'),
+      },
+      {
         to: '/photography',
         title: 'photography',
         onMouseEnter: this.onMouseEnter.bind(this, '/photography'),
