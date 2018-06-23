@@ -3,6 +3,107 @@ const PHOTOGRAPHY_BUCKET = 'https://dc4t2sxxqv4kx.cloudfront.net/';
 const getAllPhotos = (req, res, next) => {
   const photos = [
     {
+      'caption': 'San Francisco, 2018',
+      'url': '000281710002.png'
+    },
+    {
+      'caption': 'San Francisco, 2018',
+      'url': '000281680003.png'
+    }, {
+      'caption': 'San Francisco, 2018',
+      'url': '000281680004.png'
+    }, {
+      'caption': 'San Francisco, 2018',
+      'url': '000281680007.png'
+    }, {
+      'caption': 'San Francicsco, 2018',
+      'url': '000281690002.png'
+    }, {
+      'caption': 'San Francisco 2018',
+      'url': '000281690004.png'
+    }, {
+      'caption': 'San Francisco, 2018',
+      'url': '000281690011.png'
+    }, {
+      'caption': 'Pacifica, 2018',
+      'url': '000281710013.png'
+    }, {
+      'caption': 'Pacifica, 2018',
+      'url': '000281680008.png'
+    }, {
+      'caption': 'Pacifica, 2018',
+      'url': '000281680009.png'
+    }, {
+      'caption': 'Pacifica, 2018',
+      'url': '000281680011.png'
+    }, {
+      'caption': 'San Mateo, 2018',
+      'url': '000281690005.png'
+    }, {
+      'caption': 'San Mateo, 2018',
+      'url': '000281690006.png'
+    }, {
+      'caption': 'Redwood City, 2018',
+      'url': '000281690008.png'
+    }, {
+      'caption': 'San Mateo, 2018',
+      'url': '000281690010.png'
+    }, {
+      'caption': 'Paris, 2018',
+      'url': '000281700001.png'
+    }, {
+      'caption': 'Paris, 2018',
+      'url': '000281700002.png'
+    }, {
+      'caption': 'Chantilly, 2018',
+      'url': '000281700004.png'
+    }, {
+      'caption': 'Chantilly, 2018',
+      'url': '000281700005.png'
+    }, {
+      'caption': 'Chantilly, 2018',
+      'url': '000281700006.png'
+    }, {
+      'caption': 'Chantilly, 2018',
+      'url': '000281700007.png'
+    }, {
+      'caption': 'Chantilly, 2018',
+      'url': '000281700008.png'
+    }, {
+      'caption': 'Chantilly, 2018',
+      'url': '000281700010.png'
+    }, {
+      'caption': 'Chantilly, 2018',
+      'url': '000281700011.png'
+    }, {
+      'caption': 'Chantilly, 2018',
+      'url': '000281700012.png'
+    }, {
+      'caption': 'Paris, 2018',
+      'url': '000281710005.png'
+    }, {
+      'caption': 'Paris, 2018',
+      'url': '000281710006.png'
+    }, {
+      'caption': 'Paris, 2018',
+      'url': '000281710007.png'
+    }, {
+      'caption': 'Paris, 2018',
+      'url': '000281710008.png'
+    }, {
+      'caption': 'Paris, 2018',
+      'url': '000281710009.png'
+    }, {
+      'caption': 'Paris, 2018',
+      'url': '000281710010.png'
+    }, {
+      'caption': 'Paris, 2018',
+      'url': '000281710011.png'
+    }, {
+      'caption': 'Paris, 2018',
+      'url': '000281710012.png'
+    },
+    {
       'caption': 'Paris, 2018',
       'url': 'img178.png',
     },
