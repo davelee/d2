@@ -13,19 +13,19 @@ class About extends Component {
         <div>
           <ul>
             <li>
-              <a href="mailto:x.davelee@gmail.com">x.davelee@gmail.com</a>
+              <a href="mailto:x.davelee@gmail.com" target="_blank">x.davelee@gmail.com</a>
             </li>
             <li>
-              <a href="https://www.linkedin.com/in/davel33/">LinkedIn</a>
+              <a href="https://www.linkedin.com/in/davel33/" target="_blank">LinkedIn</a>
             </li>
             <li>
-              <a href="https://www.github.com/davelee">GitHub</a>
+              <a href="https://www.github.com/davelee" target="_blank">GitHub</a>
             </li>
             <li>
-              <a href="https://keybase.io/dlee">Keybase</a>
+              <a href="https://keybase.io/dlee" target="_blank">Keybase</a>
             </li>
             <li>
-              <a href="https://www.yelp.com/user_details?userid=ChAYZfqSI8OHlFd4QlYyFA">Yelp</a>
+              <a href="https://www.yelp.com/user_details?userid=ChAYZfqSI8OHlFd4QlYyFA" target="_blank">Yelp</a>
             </li>
           </ul>
         </div>
