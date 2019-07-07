@@ -45,3 +45,16 @@
 .image-loaded {
   opacity: 1;
 }
+
+
+@media only screen and (max-width: 600px) {
+
+  .photography {
+    display: block;
+  }
+
+  .photo-wrap {
+    height: 100vw;
+    width: 100vw;
+  }
+}

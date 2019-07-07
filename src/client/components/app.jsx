@@ -24,8 +24,10 @@ class App extends Component {
     return (
       <div className="app">
         <Nav />
-        <Landing />
-        {content}
+        <div id="content">
+          <Landing />
+          {content}
+        </div>
       </div>
     );
   }

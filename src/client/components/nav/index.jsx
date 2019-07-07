@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
+import { reveal as BurgerNav } from 'react-burger-menu'
+import MediaQuery from 'react-responsive';
 import Baffle from 'baffle-react';
 import './nav.scss';
 
@@ -63,8 +65,9 @@ class Nav extends Component {
 
   isActive = (path) => this.props.location.pathname === path;
 
-  render() {
+  renderDesktop = () => {
     const { obfuscate } = this.state;
+
     const baffleSettings = {
       characters: '+#-•=~*',
       speed: 50,
@@ -81,11 +84,10 @@ class Nav extends Component {
             return (
               <li key={item.to}>
                 <NavLink {...item} exact activeClassName="active">
-                  {
-                    this.isActive(item.to) ? <span>{item.title}</span> :
-                    <Baffle {...baffleSettings} obfuscate={obfuscate[item.to]}>
-                      {item.title}
-                    </Baffle>
+                  { this.isActive(item.to) ? <span>{item.title}</span> :
+                      <Baffle {...baffleSettings} obfuscate={obfuscate[item.to]}>
+                        {item.title}
+                      </Baffle>
                   }
                 </NavLink>
               </li>
@@ -96,5 +98,52 @@ class Nav extends Component {
       </div>
     );
   }
+
+  renderMobile = () => {
+    return (
+      <BurgerNav
+        outerContainerId="app"
+        pageWrapId="content"
+        className="burger-nav"
+        right
+      >
+        {
+          this.getNavItems().map((item) => {
+            // return (
+            //   <a {...item} className="menu-item" key={item.to} href={item.to}>{item.title}</a>
+            // )
+            return (
+              <NavLink 
+                {...item} 
+                className="menu-item" 
+                exact 
+                key={item.to} 
+                activeClassName="active"
+              >
+                {<span>{item.title}</span>}
+              </NavLink>
+            )
+          })
+        }
+      </BurgerNav>
+    );    
+  }
+
+  render() {
+    return (
+      <MediaQuery query="(min-width: 601px)">
+        {
+          (matches) => {
+            if (matches)
+              return this.renderDesktop();
+            else
+              return this.renderMobile();
+          }
+        }
+      </MediaQuery>
+    );
+  }
+
 }
+
 export default Nav;

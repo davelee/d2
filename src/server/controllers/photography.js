@@ -2,6 +2,50 @@ const PHOTOGRAPHY_BUCKET = 'https://dc4t2sxxqv4kx.cloudfront.net/';
 
 const getAllPhotos = (req, res, next) => {
   const photos = [
+    // {
+    //   'caption': 'San Francisco, 2019',
+    //   'url': '07.2019.02-edit.png'
+    // },
+    {
+      'caption': 'San Francisco, 2019',
+      'url': '07.2019.03-edit.png'
+    },
+    {
+      'caption': 'San Francisco, 2019',
+      'url': '07.2019.04-edit.png'
+    },
+    {
+      'caption': 'San Francisco, 2019',
+      'url': '07.2019.05-edit.png'
+    },
+    {
+      'caption': 'San Francisco, 2019',
+      'url': '07.2019.06-edit.png'
+    },
+    {
+      'caption': 'San Francisco, 2019',
+      'url': '07.2019.07-edit.png'
+    },
+    {
+      'caption': 'San Francisco, 2019',
+      'url': '07.2019.08-edit.png'
+    },
+    {
+      'caption': 'San Francisco, 2019',
+      'url': '07.2019.09-edit.png'
+    },
+    {
+      'caption': 'San Francisco, 2019',
+      'url': '07.2019.10-edit.png'
+    },
+    {
+      'caption': 'San Francisco, 2019',
+      'url': '07.2019.11-edit.png'
+    },
+    {
+      'caption': 'San Mateo, 2019',
+      'url': '07.2019.01-edit.png'
+    },
     {
       'caption': 'San Francisco, 2018',
       'url': '000281710002.png'
