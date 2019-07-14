@@ -8,7 +8,7 @@ class About extends Component {
         <p>
           Dave Lee <br></br>
           San Mateo, CA <br></br>
-          Software Engineer @ <a href="https://sendgrid.com">Twilio SendGrid</a>
+          Software Engineer @ <a href="https://sendgrid.com" target="_blank">Twilio SendGrid</a>
         </p>
         <div>
           <ul>
