@@ -1,19 +1,29 @@
 import React, { Component } from 'react';
 import { withRouter, NavLink } from 'react-router-dom';
-import { reveal as BurgerNav } from 'react-burger-menu'
+import { stack as BurgerNav } from 'react-burger-menu'
 import MediaQuery from 'react-responsive';
 import Baffle from 'baffle-react';
+import hamburgerSVG from 'assets/images/menu.svg';
 import './nav.scss';
 
 @withRouter
 class Nav extends Component {
+  state = {
+    isOpen: false
+  }
+
   constructor() {
     super();
     const obfuscate = {};
     this.getNavItems().map(item => {
       obfuscate[item.to] = true;
     });
-    this.state = { obfuscate };
+    this.state.obfuscate = obfuscate;
+  }
+
+  componentWillMount() {
+    // listen for route changes
+    this.props.history.listen(this.setMobileNavClosed)
   }
 
   getNavItems = () => {
@@ -21,32 +31,22 @@ class Nav extends Component {
       {
         to: '/',
         title: 'Dave Lee',
-        onMouseEnter: this.onMouseEnter.bind(this, '/'),
-        onMouseLeave: this.onMouseLeave.bind(this, '/'),
       },
       {
         to: '/about',
         title: 'about',
-        onMouseEnter: this.onMouseEnter.bind(this, '/about'),
-        onMouseLeave: this.onMouseLeave.bind(this, '/about'),
       },
       {
         to: '/feed',
         title: 'feed',
-        onMouseEnter: this.onMouseEnter.bind(this, '/feed'),
-        onMouseLeave: this.onMouseLeave.bind(this, '/feed'),
       },
       {
         to: '/projects',
         title: 'projects',
-        onMouseEnter: this.onMouseEnter.bind(this, '/projects'),
-        onMouseLeave: this.onMouseLeave.bind(this, '/projects'),
       },
       {
         to: '/photography',
         title: 'photography',
-        onMouseEnter: this.onMouseEnter.bind(this, '/photography'),
-        onMouseLeave: this.onMouseLeave.bind(this, '/photography'),
       }
     ];
   }
@@ -63,7 +63,17 @@ class Nav extends Component {
     this.setState({ obfuscate });
   }
 
+  attachMouseEvents = (item) => {
+    item.onMouseEnter = this.onMouseEnter.bind(this, item.to);
+    item.onMouseLeave = this.onMouseLeave.bind(this, item.to);
+    return item;
+  }
+
   isActive = (path) => this.props.location.pathname === path;
+
+  setMobileNavClosed = (location, action) => this.setState({ isOpen: false })
+
+  onMobileNavStateChange = (state) => this.setState({ isOpen: state.isOpen})
 
   renderDesktop = () => {
     const { obfuscate } = this.state;
@@ -80,7 +90,9 @@ class Nav extends Component {
       <div className='nav'>
         <ul className="">
         {
-          this.getNavItems().map((item) => {
+          this.getNavItems()
+          .map(this.attachMouseEvents)
+          .map((item) => {
             return (
               <li key={item.to}>
                 <NavLink {...item} exact activeClassName="active">
@@ -100,18 +112,22 @@ class Nav extends Component {
   }
 
   renderMobile = () => {
+    let { isOpen } = this.state;
     return (
       <BurgerNav
         outerContainerId="app"
         pageWrapId="content"
         className="burger-nav"
+        isOpen={isOpen}
+        onStateChange={(state) => this.onMobileNavStateChange(state)}
+        customBurgerIcon={<img src={hamburgerSVG} />}
+        customCrossIcon={false}
         right
+        noOverlay
       >
         {
-          this.getNavItems().map((item) => {
-            // return (
-            //   <a {...item} className="menu-item" key={item.to} href={item.to}>{item.title}</a>
-            // )
+          this.getNavItems()
+            .map((item) => {
             return (
               <NavLink 
                 {...item} 

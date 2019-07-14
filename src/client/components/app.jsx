@@ -22,7 +22,7 @@ class App extends Component {
     );
 
     return (
-      <div className="app">
+      <div className="app" id="app">
         <Nav />
         <div id="content">
           <Landing />

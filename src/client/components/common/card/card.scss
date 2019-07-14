@@ -18,6 +18,8 @@
   display: flex;
   justify-content: center;
   overflow: hidden;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
 
 
   img {
@@ -37,5 +39,15 @@
 
   h3 {
     margin-top: 5px;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .card {
+    margin-left: 20px!important;
+  }
+
+  .page-title {
+    margin: 0px 20px;
   }
 }
