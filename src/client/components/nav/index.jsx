@@ -123,7 +123,7 @@ class Nav extends Component {
         customBurgerIcon={<img src={hamburgerSVG} />}
         customCrossIcon={false}
         right
-        noOverlay
+        // noOverlay
       >
         {
           this.getNavItems()
