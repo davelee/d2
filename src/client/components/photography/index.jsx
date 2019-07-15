@@ -1,18 +1,22 @@
 import React, { Component } from 'react';
 import ReactList from 'react-list';
+import MediaQuery from 'react-responsive';
 import Photo from './photo';
 import './photography.scss';
 
 class Photography extends Component {
   state = {
     photographyData: [],
+    miniPhotographyData: [],
   }
 
   componentWillMount() {
-    let photographyData = [];
     this.fetchPhotographyData()
     .then((photographyData) => {
-      this.setState({ photographyData });
+      this.setState({ 
+        photographyData,
+        miniPhotographyData: this.getMiniPhotographyData(photographyData.slice(0)),
+      });
     });
   }
 
@@ -24,11 +28,22 @@ class Photography extends Component {
     });
   }
 
+  getMiniPhotographyData = (photographyData) => {
+    return photographyData.map((item) => {
+      const url = new URL(item.url);
+      const miniPath = "/mini" + url.pathname;
+      item.url = url.origin + miniPath;
+      return item;
+    });
+  }
+
   renderPhoto = (idx, key) => <Photo key={key} idx={idx} {...this.state.photographyData[idx]} />
+  
+  renderPhotoMini = (idx, key) => <Photo key={key} idx={idx} {...this.state.miniPhotographyData[idx]} />
 
   render() {
-    const { photographyData } = this.state;
-    if (!photographyData) {
+    let { photographyData, miniPhotographyData } = this.state;
+    if (!photographyData || !miniPhotographyData) {
       return (
         <div style={{background: 'black', color: 'white'}}>
           loading...
@@ -36,14 +51,21 @@ class Photography extends Component {
       );
     }
     return (
-      <div className='photography'>
-        <ReactList
-          useTranslate3d={true}
-          itemSizeGetter={() => Math.max(document.documentElement.clientHeight, window.innerHeight || 0)}
-          length={photographyData.length}
-          itemRenderer={this.renderPhoto}
-        />
-      </div>
+      <MediaQuery query="(max-width: 599px)">
+        {(matches) => {
+          const data = matches ? miniPhotographyData : photographyData;
+          return (
+            <div className='photography'>
+              <ReactList
+                useTranslate3d={true}
+                itemSizeGetter={() => Math.max(document.documentElement.clientHeight, window.innerHeight || 0)}
+                length={data.length}
+                itemRenderer={matches ? this.renderPhotoMini : this.renderPhoto}
+              />
+            </div>
+          );
+        }}
+      </MediaQuery>
     );
   }
 }

@@ -7,13 +7,15 @@ class Card extends Component {
 
     return (
       <div className='card'>
-        <div className='img-wrap' style={props.backgroundStyle}>
-          <img src={props.img} />
-        </div>
-        <div className='desc-wrap'>
-          <a href={props.link} target="_blank"><h3>{props.title}</h3></a>
-          <p>{props.description}</p>
-        </div>
+        <a className="card-link" href={props.link} target="_blank">
+          <div className='img-wrap' style={props.backgroundStyle}>
+            <img src={props.img} />
+          </div>
+          <div className='desc-wrap'>
+            <h3>{props.title}</h3>
+            <p>{props.description}</p>
+          </div>
+        </a>
       </div>
     );
   }
