@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import _ from 'lodash';
 import ReactList from 'react-list';
 import MediaQuery from 'react-responsive';
 import Photo from './photo';
@@ -15,7 +16,7 @@ class Photography extends Component {
     .then((photographyData) => {
       this.setState({ 
         photographyData,
-        miniPhotographyData: this.getMiniPhotographyData(photographyData.slice(0)),
+        miniPhotographyData: this.getMiniPhotographyData(_.cloneDeep(photographyData)),
       });
     });
   }
@@ -50,6 +51,7 @@ class Photography extends Component {
         </div>
       );
     }
+
     return (
       <MediaQuery query="(max-width: 599px)">
         {(matches) => {
