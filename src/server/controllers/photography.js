@@ -35,11 +35,11 @@ const getAllPhotos = (req, res, next) => {
       url:'000411700002.png'
     },
     { 
-      caption:'Photograph By Connie Qi, 2019',
+      caption:'2019',
       url:'000411700003.png'
     },
     { 
-      caption:'Photograph By Connie Qi, 2019',
+      caption:'2019',
       url:'000411700004.png'
     },
     { 
@@ -71,11 +71,11 @@ const getAllPhotos = (req, res, next) => {
       url:'000411710002.png'
     },
     { 
-      caption:'2019',
+      caption:'Photograph By Connie Qi, 2019',
       url:'000411710003.png'
     },
     { 
-      caption:'2019',
+      caption:'Photograph By Connie Qi, 2019',
       url:'000411710004.png'
     },
     { 
