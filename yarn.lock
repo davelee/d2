@@ -4476,9 +4476,9 @@ react-lazyload@^2.3.0:
   version "2.3.0"
   resolved "https://registry.yarnpkg.com/react-lazyload/-/react-lazyload-2.3.0.tgz#ccb134223012447074a96543954f44b055dc6185"
 
-react-list@^0.8.8:
-  version "0.8.8"
-  resolved "https://registry.yarnpkg.com/react-list/-/react-list-0.8.8.tgz#de2cb768dd210fb3e4835b9277f158e9cd403078"
+react-list@0.8.12:
+  version "0.8.12"
+  resolved "https://registry.yarnpkg.com/react-list/-/react-list-0.8.12.tgz#a1b830b3f9063f39320daa4a78b074c5b147e285"
   dependencies:
     prop-types "15"
 
