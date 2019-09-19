@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
 import _ from 'lodash';
 import ReactList from 'react-list';
+import { withRouter } from 'react-router-dom';
 import MediaQuery from 'react-responsive';
 import Photo from './photo';
 import './photography.scss';
 
+@withRouter
 class Photography extends Component {
   state = {
     photographyData: [],
@@ -14,7 +16,17 @@ class Photography extends Component {
   componentWillMount() {
     this.fetchPhotographyData()
     .then((photographyData) => {
-      this.setState({ 
+      // support anchor links
+      let initialIdx;
+      if (this.props.location.hash) {
+        let hash = this.props.location.hash.slice(1);
+        initialIdx = photographyData.findIndex((e) => {
+          return e.url.includes(hash)
+        })
+      }
+
+      this.setState({
+        initialIdx,
         photographyData,
         miniPhotographyData: this.getMiniPhotographyData(_.cloneDeep(photographyData)),
       });
@@ -43,12 +55,10 @@ class Photography extends Component {
   renderPhotoMini = (idx, key) => <Photo key={key} idx={idx} {...this.state.miniPhotographyData[idx]} />
 
   render() {
-    let { photographyData, miniPhotographyData } = this.state;
-    if (!photographyData || !miniPhotographyData) {
+    let { photographyData, miniPhotographyData, initialIdx } = this.state;
+    if (!photographyData.length || !miniPhotographyData.length) {
       return (
-        <div style={{background: 'black', color: 'white'}}>
-          loading...
-        </div>
+        <div className="loader" />
       );
     }
 
@@ -59,10 +69,12 @@ class Photography extends Component {
           return (
             <div className='photography'>
               <ReactList
+                initialIndex={initialIdx}
                 useTranslate3d={true}
                 itemSizeGetter={() => Math.max(document.documentElement.clientHeight, window.innerHeight || 0)}
                 length={data.length}
                 itemRenderer={matches ? this.renderPhotoMini : this.renderPhoto}
+                ref={(ref) => this.reactPhotoList = ref}
               />
             </div>
           );

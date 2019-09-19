@@ -10,6 +10,7 @@ class Image extends React.Component {
   onImageLoad = () => {
     if (this.mounted) {
       this.setState({ loaded: true });
+      this.props.setLoaded();
     }
   }
 
@@ -28,7 +29,7 @@ class Image extends React.Component {
   }
 
   render() {
-    const { className, ...props } = this.props;
+    const { className, setLoaded, ...props } = this.props;
     const rootClassName = classNames(className, 'image', {
       'image-loaded': this.state.loaded,
     });

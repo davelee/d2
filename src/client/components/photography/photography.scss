@@ -1,3 +1,13 @@
+.loader {
+  min-height: 100vh;
+  height: 100vh;
+  width: 100vw;
+  background: white;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
 .photography {
   min-height: 100vh;
   width: 100vw;
@@ -57,4 +67,25 @@
     height: 100vw;
     width: 100vw;
   }
+}
+
+.copy-link {
+  img {
+    position: absolute;
+    right: 10px;
+    bottom: 1em;
+    border-radius: 5px;
+    width: 1.2em;
+    height: 1.2em;
+    cursor: pointer;
+    background: white;
+    opacity: .5;
+  }
+}
+
+.copied-text {
+  position: absolute;
+  right: 2.5em;
+  color: white;
+  bottom: 1em;
 }

@@ -1,5 +1,7 @@
 import React, { Component } from 'react';
 import { lazyload } from 'react-lazyload';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
+import linkIcon from 'assets/images/link-icon.png'
 import Img from './image';
 
 @lazyload({
@@ -8,12 +10,40 @@ import Img from './image';
   offset: 400,
 })
 class Photo extends React.Component {
+  constructor(props) {
+    super(props)
+    this.id = props.url.split('/')[3];
+    this.anchorLink = 'https://davelee.io/photography' + this.id;
+    this.state = {
+      isImageLoaded: false,
+    }
+  }
+
+  setImageLoaded = () => {
+    this.setState({
+      isImageLoaded: true
+    })
+  }
+
   render() {
-    const { url, caption, idx } = this.props;
+    const { url, caption } = this.props;
+    const { isImageLoaded } = this.state;
+    
     return (
-      <div className="photo-wrap">
-        <Img className="photo" src={url} />
-        <span className="photo-caption">{caption}</span>
+      <div id={this.id} className="photo-wrap">
+        <Img className="photo" src={url} setLoaded={this.setImageLoaded} />
+        <span className="photo-caption">
+          {caption}
+        </span>
+        {isImageLoaded && 
+          <CopyToClipboard text={this.anchorLink}
+            onCopy={() => this.setState({copied: true})}>
+            <span className='copy-link'>
+              {this.state.copied && <span className="copied-text">copied!</span>}
+              <img src={linkIcon} />
+            </span>
+          </CopyToClipboard>
+        }
       </div>
     );
   }

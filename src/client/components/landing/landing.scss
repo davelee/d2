@@ -11,6 +11,7 @@
 }
 
 .me-image {
+  border-radius: 3em;
   animation: shrinkLong linear 100s alternate;
   animation-iteration-count: infinite;
   transform-origin: 50% 50%;
