@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import daveLeePng from 'assets/images/daveLee.png';
+import daveLeePng from 'assets/images/me.gif';
 import './landing.scss';
 
 class Landing extends Component {
