@@ -13,11 +13,11 @@ module.exports = (req, res) => {
     manifest = require('../dist/manifest.json');
   }
 
-  let ogImageURL = PHOTOGRAPHY_BUCKET + "000281710012.png";
-  
-  if (req.query) {
+  let ogImageURL = PHOTOGRAPHY_BUCKET + "mini/000281710012.png";
+
+  if (req.query['p']) {
     let imgName = req.query['p']
-    ogImageURL = PHOTOGRAPHY_BUCKET + imgName;
+    ogImageURL = PHOTOGRAPHY_BUCKET + "mini/" + imgName;
   }
 
   const html = (
