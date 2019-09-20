@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import ReactList from 'react-list';
 import { withRouter } from 'react-router-dom';
+import querySearch from "stringquery";
 import MediaQuery from 'react-responsive';
 import Photo from './photo';
 import './photography.scss';
@@ -18,8 +19,8 @@ class Photography extends Component {
     .then((photographyData) => {
       // support anchor links
       let initialIdx;
-      if (this.props.location.hash) {
-        let hash = this.props.location.hash.slice(1);
+      if (this.props.location.search) {
+        let hash = querySearch(this.props.location.search)['p'];
         initialIdx = photographyData.findIndex((e) => {
           return e.url.includes(hash)
         })

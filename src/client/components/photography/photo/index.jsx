@@ -15,7 +15,7 @@ class Photo extends React.Component {
     super(props)
     let arrPath = props.url.split('/');
     this.id = arrPath[arrPath.length-1];
-    this.anchorLink = 'https://davelee.io/photography#' + this.id;
+    this.anchorLink = 'https://davelee.io/photography?p=' + this.id;
     this.state = {
       isImageLoaded: false,
     }
