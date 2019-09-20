@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { lazyload } from 'react-lazyload';
 import { CopyToClipboard } from 'react-copy-to-clipboard';
+import DocumentMeta from 'react-document-meta';
 import linkIcon from 'assets/images/link-icon.png'
 import Img from './image';
 
@@ -12,7 +13,8 @@ import Img from './image';
 class Photo extends React.Component {
   constructor(props) {
     super(props)
-    this.id = props.url.split('/')[3];
+    let arrPath = props.url.split('/');
+    this.id = arrPath[arrPath.length-1];
     this.anchorLink = 'https://davelee.io/photography#' + this.id;
     this.state = {
       isImageLoaded: false,
