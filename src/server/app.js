@@ -23,8 +23,14 @@ app.use('/dist', express.static(path.resolve(__dirname, '../../dist'), {}));
 app.use(cookieParser());
 app.use(bodyParser.json());
 
+app.get('/ogimage/:image_id', photographyController.getThumbnail);
+
 app.get('/api/photography', photographyController.getAllPhotos);
 app.get('*', mainPageController);
+
+app.use(function (err, req, res, next) {
+  res.status(500).send("Internal server error.")
+})
 
 
 const https = require('https');

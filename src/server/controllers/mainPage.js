@@ -3,8 +3,6 @@ const config = require('../dist/config');
 let manifest = require('../dist/manifest.json');
 const isDev = (process.env.NODE_ENV === 'development');
 
-const PHOTOGRAPHY_BUCKET = 'https://dc4t2sxxqv4kx.cloudfront.net/';
-
 module.exports = (req, res) => {
   // Since every time we rebuild with webpack new bundle files get generated,
   // we need to clear the previous manifest that was imported.
@@ -13,12 +11,8 @@ module.exports = (req, res) => {
     manifest = require('../dist/manifest.json');
   }
 
-  let ogImageURL = PHOTOGRAPHY_BUCKET + "mini/000281710012.png";
-
-  if (req.query['p']) {
-    let imgName = req.query['p']
-    ogImageURL = PHOTOGRAPHY_BUCKET + "mini/" + imgName;
-  }
+  const imgName = req.query['p'] || "000281710012.png";
+  const ogImageURL = "https://davelee.io/ogimage/" + imgName;
 
   const html = (
     `<!DOCTYPE html>
