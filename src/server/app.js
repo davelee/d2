@@ -18,6 +18,7 @@ app.use(helmet());
 
 //----- STATIC ROUTES -----/
 app.use('/dist', express.static(path.resolve(__dirname, '../../dist'), {}));
+app.use("/keybase.txt", express.static(__dirname + '/keybase.txt'));
 
 //----- MORE APP CONFIG -----/
 app.use(cookieParser());
@@ -26,6 +27,7 @@ app.use(bodyParser.json());
 app.get('/ogimage/:image_id', photographyController.getThumbnail);
 
 app.get('/api/photography', photographyController.getAllPhotos);
+app.get('/keybase.txt')
 app.get('*', mainPageController);
 
 app.use(function (err, req, res, next) {

@@ -1,0 +1,56 @@
+==================================================================
+https://keybase.io/dlee
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of https://davelee.io
+  * I am dlee (https://keybase.io/dlee) on keybase.
+  * I have a public key ASCwQGHF0Z-Jhak3COCMPcsD2AIFpr6LCuzVjiStTTqfyAo
+
+To do so, I am signing this object:
+
+{
+  "body": {
+    "key": {
+      "eldest_kid": "0101d40519acb5eedd3e87e38b27e585be2a45b27a0c61b260d3f556855f49f5bce60a",
+      "host": "keybase.io",
+      "kid": "0120b04061c5d19f8985a93708e08c3dcb03d80205a6be8b0aecd58e24ad4d3a9fc80a",
+      "uid": "472bad9014eccadb33504dde3b25ec00",
+      "username": "dlee"
+    },
+    "merkle_root": {
+      "ctime": 1585434004,
+      "hash": "ea69f88b207fc8c45b541aa4d359990aea62d893d34a22ff09bd2106c8663151486c7a79459784e2250d7863a29ae84a6026b298e44697372f479571399b2511",
+      "hash_meta": "5b63403f5055d18e723db34220e6f1ec87b7aa9f285c39e0745cfbf3a197592e",
+      "seqno": 15660072
+    },
+    "service": {
+      "entropy": "g/e/JxmX8moWVBY1d4dhOdhV",
+      "hostname": "davelee.io",
+      "protocol": "https:"
+    },
+    "type": "web_service_binding",
+    "version": 2
+  },
+  "client": {
+    "name": "keybase.io go client",
+    "version": "5.3.0"
+  },
+  "ctime": 1585434040,
+  "expire_in": 504576000,
+  "prev": "3c1eb3e80b98ceab804e68e1a42a1298b3e466da896bf50893c11081fe8c3765",
+  "seqno": 65,
+  "tag": "signature"
+}
+
+which yields the signature:
+
+hKRib2R5hqhkZXRhY2hlZMOpaGFzaF90eXBlCqNrZXnEIwEgsEBhxdGfiYWpNwjgjD3LA9gCBaa+iwrs1Y4krU06n8gKp3BheWxvYWTESpcCQcQgPB6z6AuYzquATmjhpCoSmLPkZtqJa/UIk8EQgf6MN2XEICmpdc6trXHXND53ildLf9K8dWlvmlESrQu+7yDrOPtQAgHCo3NpZ8RAMevggfv73+lKkpwcBLXWP048J4ekwOMFid0vw8YCXF1RmTUlEOPkU9jx1KDHje81dFtN0B67EhImGS6uH00hA6hzaWdfdHlwZSCkaGFzaIKkdHlwZQildmFsdWXEIJdm2fOPhxWPYlVkuwy4LnXH3eURTkw132ogUpQIiMfIo3RhZ80CAqd2ZXJzaW9uAQ==
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/dlee
+
+==================================================================
