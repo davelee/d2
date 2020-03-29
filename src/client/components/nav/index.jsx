@@ -33,8 +33,8 @@ class Nav extends Component {
         title: 'Dave Lee',
       },
       {
-        to: '/about',
-        title: 'about',
+        to: '/contact',
+        title: 'contact',
       },
       {
         to: '/feed',

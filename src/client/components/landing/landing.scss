@@ -1,75 +1,22 @@
-.landing-page {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: white;
-  height: 100vh;
-  width: 100%;
-  overflow: hidden;
-  z-index: -1;
-  position: absolute;
-}
+  .landing-page {
+    display: flex;
+    justify-content: flex-start ;
+    align-items: center;
+    background: white;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+    z-index: -1;
+    position: absolute;
+  }
 
-.me-image {
-  border-radius: 3em;
-  animation: shrinkLong linear 100s alternate;
-  animation-iteration-count: infinite;
-  transform-origin: 50% 50%;
-  -webkit-animation: shrinkLong linear 100s alternate;
-  -webkit-animation-iteration-count: infinite;
-  -webkit-transform-origin: 50% 50%;
-  -moz-animation: shrinkLong linear 100s alternate;
-  -moz-animation-iteration-count: infinite;
-  -moz-transform-origin: 50% 50%;
-  -o-animation: shrinkLong linear 100s alternate;
-  -o-animation-iteration-count: infinite;
-  -o-transform-origin: 50% 50%;
-  -ms-animation: shrinkLong linear 100s alternate;
-  -ms-animation-iteration-count: infinite;
-  -ms-transform-origin: 50% 50%;
-}
+  .me-image {
+    height: 100vh;
+  }
 
-@keyframes shrinkLong{
-  0% {
-    transform:  translate(0px,0px)  rotate(0deg) scaleX(1.00) scaleY(1.00) ;
+  @media only screen and (max-width: 600px) {
+    .me-image {
+      object-fit: cover;
+      width: 100vw;
+    }
   }
-  100% {
-    transform:  translate(-500px,200px)  rotate(180deg) scaleX(10.00) scaleY(10.00) ;
-  }
-}
-
-@-moz-keyframes shrinkLong{
-  0% {
-    -moz-transform:  translate(0px,0px)  rotate(0deg) scaleX(1.00) scaleY(1.00) ;
-  }
-  100% {
-    -moz-transform:  translate(50px,200px)  rotate(180deg) scaleX(10.00) scaleY(10.00) ;
-  }
-}
-
-@-webkit-keyframes shrinkLong {
-  0% {
-    -webkit-transform:  translate(0px,0px)  rotate(0deg) scaleX(1.00) scaleY(1.00) ;
-  }
-  100% {
-    -webkit-transform:  translate(50px,200px)  rotate(180deg) scaleX(10.00) scaleY(10.00) ;
-  }
-}
-
-@-o-keyframes shrinkLong {
-  0% {
-    -o-transform:  translate(0px,0px)  rotate(0deg) scaleX(1.00) scaleY(1.00) ;
-  }
-  100% {
-    -o-transform:  translate(50px,200px)  rotate(180deg) scaleX(10.00) scaleY(10.00) ;
-  }
-}
-
-@-ms-keyframes shrinkLong {
-  0% {
-    -ms-transform:  translate(0px,0px)  rotate(0deg) scaleX(1.00) scaleY(1.00) ;
-  }
-  100% {
-    -ms-transform:  translate(50px,200px)  rotate(180deg) scaleX(10.00) scaleY(10.00) ;
-  }
-}

@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import './about.scss';
+import './contact.scss';
 
-class About extends Component {
+class Contact extends Component {
   render() {
     return (
-      <div className='about'>
+      <div className='contact'>
         <p>
           Dave Lee <br></br>
           San Mateo, CA <br></br>
@@ -33,4 +33,4 @@ class About extends Component {
     );
   }
 }
-export default About;
+export default Contact;
