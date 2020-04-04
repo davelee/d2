@@ -52,15 +52,15 @@ class Nav extends Component {
   }
 
   onMouseLeave = (key) => {
-    const { obfuscate } = this.state;
-    obfuscate[key] = true;
-    this.setState({ obfuscate });
+    // const { obfuscate } = this.state;
+    // obfuscate[key] = true;
+    // this.setState({ obfuscate });
   }
 
   onMouseEnter = (key) => {
-    const { obfuscate } = this.state;
-    obfuscate[key] = false;
-    this.setState({ obfuscate });
+    // const { obfuscate } = this.state;
+    // obfuscate[key] = false;
+    // this.setState({ obfuscate });
   }
 
   attachMouseEvents = (item) => {
@@ -96,10 +96,9 @@ class Nav extends Component {
             return (
               <li key={item.to}>
                 <NavLink {...item} exact activeClassName="active">
-                  { this.isActive(item.to) ? <span>{item.title}</span> :
-                      <Baffle {...baffleSettings} obfuscate={obfuscate[item.to]}>
-                        {item.title}
-                      </Baffle>
+                  { this.isActive(item.to) ? 
+                    <span>{item.title}</span> : 
+                    <span>{item.title}</span>
                   }
                 </NavLink>
               </li>

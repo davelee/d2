@@ -1,9 +1,18 @@
 .nav {
-  width: 140px;
+  height: 100vh;
   z-index: 1;
   position: fixed;
   right: 0;
   top: 0;
+  padding-right: 10px;
+
+  background: rgba(0,0,0,0);
+  transition: background 1s ease-in-out;
+
+  &:hover {
+    background: rgba(0,0,0,.85);
+    transition: background 1s ease-in-out;
+  }
 
   ul {
     list-style: none;
@@ -14,10 +23,11 @@
     flex-direction: column;
 
     li {
-      height: 50px;
       display: flex;
-      justify-content: center;
+      justify-content: flex-end;
       align-items: center;
+      font-size: 1.4em;
+      padding: 15px;
 
       a {
         text-decoration: none;
