@@ -8,7 +8,7 @@ class Contact extends Component {
         <p>
           Dave Lee <br></br>
           San Mateo, CA <br></br>
-          Software Engineer @ <a href="https://sendgrid.com" target="_blank">Twilio SendGrid</a>
+          Senior Software Engineer @ <a href="https://twilio.com" target="_blank">Twilio</a>
         </p>
         <div>
           <ul>
