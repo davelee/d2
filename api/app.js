@@ -1,7 +1,9 @@
+const https = require('https');
 const http = require('http');
 const express = require('express');
 const helmet = require('helmet');
 const bodyParser = require('body-parser');
+const fs = require('fs');
 const path = require('path');
 
 const config = require('./dist/config');
@@ -24,7 +26,15 @@ app.get('/ogimage/:image_id', photography.getThumbnail);
 app.get('/api/photography', photography.getAllPhotos);
 app.get('*', index);
 
-// server, listen
-http.createServer(app).listen(config.port);
+// server
+server = process.env.NODE_ENV === "production" ?
+  https.createServer({
+    key: fs.readFileSync('/etc/letsencrypt/live/www.davelee.io/privkey.pem'),
+    cert: fs.readFileSync('/etc/letsencrypt/live/www.davelee.io/fullchain.pem')
+  }, app) :
+  http.createServer(app);
+
+// listen
+server.listen(config.port)
 
 module.exports = app;
