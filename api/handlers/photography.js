@@ -1,13 +1,15 @@
+const _ = require('lodash')
 const sharp = require('sharp')
 const request = require('request');
 const PHOTOGRAPHY_BUCKET = 'https://dc4t2sxxqv4kx.cloudfront.net/';
-const photos = require('./photos.json')
+const jsonPhotos = require('./photos.json')
 
 const getAllPhotos = (req, res, next) => {
+  let photos = _.cloneDeep(jsonPhotos)
   res.status(200).send(
-    photos.map((photo) => {
-      photo.url = PHOTOGRAPHY_BUCKET + photo.url;
-      return photo;
+    photos.map((p) => {
+      p.url = PHOTOGRAPHY_BUCKET + p.url;
+      return p;
     })
   );
 }
