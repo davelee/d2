@@ -7,21 +7,11 @@ const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 const NODE_ENV = process.env.NODE_ENV;
-const DEPLOY_ENV = process.env.DEPLOY_ENV;
-const isDev = (NODE_ENV === 'development');
 const isProd = (NODE_ENV === 'production');
-const appConfig = require('./src/config');
-
-// Common stuff used in both regular config and test only
-const definePlugin = new webpack.DefinePlugin({
-  'process.env': {
-    NODE_ENV: JSON.stringify(NODE_ENV),
-    IS_BROWSER: true
-  }
-});
+const appConfig = require('./config');
 
 module.exports = {
-  context: path.join(__dirname, 'src'),
+  context: __dirname,
   entry: {
     app: ['./client/init_app.js'],
     vendor: [
@@ -30,10 +20,6 @@ module.exports = {
       'react',
       'react-dom',
       'react-router'
-      // Uncomment if you end up using these in your app
-      // 'moment',
-      // 'moment-timezone',
-      // 'react-dates'
     ]
   },
   resolve: {
@@ -42,14 +28,14 @@ module.exports = {
       fs: path.resolve(__dirname, 'node_modules/browserify-fs'),
     },
     modules: [
-      path.resolve(__dirname, 'src'),
-      path.resolve(__dirname, 'src/client'),
+      path.resolve(__dirname),
+      path.resolve(__dirname, 'client'),
       'node_modules'
     ],
     extensions: ['.jsx', '.js', 'json']
   },
   resolveLoader: {
-    modules: [path.resolve(__dirname, 'webpack_loaders'), 'node_modules']
+    modules: ['node_modules']
   },
   output: {
     publicPath: appConfig.publicPath,
@@ -58,21 +44,15 @@ module.exports = {
     pathinfo: !isProd
   },
   plugins: [
-    definePlugin,
-    new CleanWebpackPlugin(['dist/**/*', 'src/server/dist/**/*']),
+    new CleanWebpackPlugin(['dist/**/*', 'api/dist/**/*']),
     new ManifestPlugin({
-      fileName: '../src/server/dist/manifest.json',
+      fileName: '../api/dist/manifest.json',
       publicPath: appConfig.publicPath
     }),
     new CopyWebpackPlugin([
       {
-        from : path.join(__dirname, 'src/common/**/*'),
-        to: path.join(__dirname, 'src/server/dist' )
-      },
-      {
-        ignore: DEPLOY_ENV ? [] : ['config.local.js'],
-        from : path.join(__dirname, 'src/config/**/*'),
-        to: path.join(__dirname, 'src/server/dist')
+        from : path.join(__dirname, 'config/**/*'),
+        to: path.join(__dirname, 'api/dist')
       }
     ]),
     new webpack.optimize.CommonsChunkPlugin({
@@ -83,7 +63,7 @@ module.exports = {
       filename: isProd ? '[name].[contenthash].css' : '[name].css',
     }),
   ],
-  devtool: isProd ? undefined : 'eval',
+  devtool: isProd ? undefined : 'cheap-module-eval-source-map',
   module: {
     rules: [
       {
@@ -113,14 +93,7 @@ module.exports = {
         options: {
           name: isProd ? '[name].[hash].[ext]' : '[path][name].[ext]'
         }
-      },
-      {
-        include: path.resolve(__dirname, 'src/config'),
-        loader: 'config-loader',
-        options: {
-          whitelistedKeys: ['appUrl', 'publicPath']
-        }
       }
     ]
-  },
+  }
 };
