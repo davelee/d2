@@ -66,8 +66,8 @@
   }
 
   .photo-wrap {
-    height: 100vw;
-    width: 100vw;
+    max-height: 100vh;
+    max-width: 80vw;
   }
 
   .copy-link img {
