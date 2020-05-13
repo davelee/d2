@@ -33,7 +33,9 @@
   margin: auto;
   position: absolute;
   bottom: 1em;
+  left: 10em;
   color: white;
+  font-size: 8px;
 }
 
 .photo-wrap {
@@ -77,7 +79,7 @@
 
 .copy-link {
   display: none;
-  
+
   img {
     position: absolute;
     right: 10px;
