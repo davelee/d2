@@ -14,6 +14,7 @@ class App extends Component {
     const content = (
       <Switch key="routes">
         <Route path="/photography" component={Photography} />
+        <Route path="/film" component={Photography} />
         <Route path="/contact" component={Contact} />
         <Route path="/feed" component={Feed} />
         <Route path="/projects" component={Projects} />
