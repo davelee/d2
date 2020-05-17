@@ -45,8 +45,8 @@ class Nav extends Component {
         title: 'projects',
       },
       {
-        to: '/photography',
-        title: 'photography',
+        to: '/film',
+        title: 'film',
       }
     ];
   }

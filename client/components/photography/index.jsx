@@ -72,7 +72,6 @@ class Photography extends Component {
               <ReactList
                 initialIndex={initialIdx}
                 useTranslate3d={true}
-                itemSizeGetter={() => Math.max(document.documentElement.clientHeight, window.innerHeight || 0)}
                 length={data.length}
                 itemRenderer={matches ? this.renderPhotoMini : this.renderPhoto}
                 ref={(ref) => this.reactPhotoList = ref}

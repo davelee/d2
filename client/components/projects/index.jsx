@@ -25,7 +25,7 @@ class Projects extends Component {
       title: 'Custom Photo Blog',
       description: 'A vertical scrolling, lazy loading photo blog built with React.',
       img: photoBlogPng,
-      link: '/photography',
+      link: '/film',
     }, {
       title: 'Personal Website',
       description: "I'm talking about THIS. ES6, React, SASS, Express, Node, WebPack, AWS S3 & CloudFront, Digital Ocean.",
