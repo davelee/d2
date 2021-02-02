@@ -19,7 +19,9 @@
   color: black;
 
   >div {
-    width: 100vh;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
   }
 }
 
@@ -42,12 +44,12 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-height: 100vh;
   position: relative;
-  margin-bottom: 6em;
+  margin-bottom: 4em;
   margin-left: 4em;
   margin-right: 4em;
   overflow: auto;
+  max-width: 40vh;
 }
 
 .image {
