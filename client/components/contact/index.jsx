@@ -7,8 +7,8 @@ class Contact extends Component {
       <div className='contact'>
         <p>
           Dave Lee <br></br>
-          San Mateo, CA <br></br>
-          Senior Software Engineer @ <a href="https://twilio.com" target="_blank">Twilio</a>
+          Seattle, WA <br></br>
+          Staff Software Engineer @ <a href="https://twilio.com" target="_blank">Twilio</a>
         </p>
         <div>
           <ul>
